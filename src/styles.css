@@ -1,1 +1,224 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+	height: 100%;
+	margin: 0px;
+}
+
+* {
+	font-family: 'Ubuntu';
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.page-container {
+	width: 100%;
+	height: 100%;
+	max-width: 1600px;
+	margin: auto;
+	position: relative;
+}
+
+.page-container .navigation-links {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	display: flex;
+	justify-content: space-between;
+	background-color: #2F528F;
+	padding-bottom: 8px;
+}
+
+.page-container .navigation-links .title-and-welcome-text {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	background-color: white;
+	padding-left: 30px;
+}
+
+.page-container .navigation-links .title-and-welcome-text .title {
+	flex: 1;
+	display: flex;
+	align-items: flex-end;
+	font-size: 18px;
+	cursor: pointer;
+	text-decoration: unset;
+	color: black;
+}
+
+.page-container .navigation-links .title-and-welcome-text .title:hover {
+	opacity: 0.6;
+}
+
+.page-container .navigation-links .title-and-welcome-text .title:visited {
+	color: black;
+}
+
+.page-container .navigation-links .title-and-welcome-text .welcome-text {
+	flex: 1;
+	display: flex;
+	align-items: flex-start;
+	font-style: italic;
+}
+
+.page-container .navigation-links .navigation-links-inner {
+	width: 558px;
+	display: flex;
+}
+
+.page-container .navigation-links .navigation-links-inner .navigation-link {
+	flex: 1;
+	height: 64px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	color: black;
+	cursor: pointer;
+	text-decoration: unset;
+}
+
+.page-container .navigation-links .navigation-links-inner .navigation-link:hover {
+	opacity: 0.9;
+}
+
+.page-container .navigation-links .navigation-links-inner .navigation-link.active {
+	background-color: #2F528F;
+	color: white;
+}
+
+.page-container .navigation-links .navigation-links-inner .navigation-link.active:hover {
+	opacity: 1.0;
+}
+
+.page-container .navigation-links .navigation-links-inner .navigation-link .icon {
+	width: 32px;
+	height: 32px;
+	margin-right: 10px;
+}
+/* 
+.page-container .navigation-links .navigation-links-inner .navigation-link.home-link .icon {
+	background-image: url("assets/icon-home.png");
+}
+
+.page-container .navigation-links .navigation-links-inner .navigation-link.home-link.active .icon {
+	background-image: url("assets/icon-home-active.png");
+}
+
+.page-container .navigation-links .navigation-links-inner .navigation-link.roulette-link .icon {
+	background-image: url("assets/icon-roulette.png");
+}
+
+.page-container .navigation-links .navigation-links-inner .navigation-link.roulette-link.active .icon {
+	background-image: url("assets/icon-roulette-active.png");
+}
+
+.page-container .navigation-links .navigation-links-inner .navigation-link.logout-link .icon {
+	background-image: url("assets/icon-logout.png");
+}
+
+.page-container .navigation-links .navigation-links-inner .navigation-link.logout-link.active .icon {
+	background-image: url("assets/icon-logout-active.png");
+} */
+
+.page-container .page-content {
+	position: absolute;
+	top: 72px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	overflow: auto;
+	padding: 20px 30px 20px 30px;
+}
+
+
+/* Mobile CSS */
+
+@media only screen and (max-width: 736px) {
+	.page-container .mobile-header {
+		display: flex;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		height: 64px;
+		border-bottom: 8px solid #2F528F;
+	}
+	.page-container .mobile-header .title {
+		flex: 1;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		font-size: 18px;
+		padding-left: 30px;
+		cursor: pointer;
+		text-decoration: unset;
+		color: black;
+	}
+	.page-container .mobile-header .title:hover {
+		opacity: 0.6;
+	}
+	.page-container .mobile-header .title:visited {
+		color: black;
+	}
+	.page-container .mobile-header .welcome-text {
+		flex: 1;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding-right: 30px;
+		font-style: italic;
+	}
+	.page-container .navigation-links {
+		padding-top: 8px;
+		padding-bottom: 0px;
+		top: auto;
+		bottom: 0px;
+	}
+	.page-container .navigation-links .title-and-welcome-text {
+		display: none;
+	}
+	.page-container .navigation-links .navigation-links-inner {
+		width: 100%;
+	}
+	.page-container .page-content {
+		top: 64px;
+		bottom: 72px;
+	}
+}
+
+
+/* Non-mobile (Desktop or Tablet) CSS */
+
+@media only screen and (min-width: 737px) {
+	.page-container .mobile-header {
+		display: none;
+	}
+}
+
+
+/* CSS for small screen mobile phones */
+
+@media only screen and (max-width: 450px) {
+	.page-container .mobile-header .title {
+		padding-left: 15px;
+	}
+	.page-container .mobile-header .welcome-text {
+		padding-right: 15px;
+	}
+	.page-container .page-content {
+		padding: 10px 15px 10px 15px;
+	}
+	.page-container .navigation-links .navigation-links-inner .navigation-link .icon {
+		margin-right: 0px;
+	}
+	.page-container .navigation-links .navigation-links-inner .navigation-link .label {
+		display: none;
+	}
+}

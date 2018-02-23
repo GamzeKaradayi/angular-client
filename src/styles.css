@@ -102,7 +102,7 @@ body {
 	height: 32px;
 	margin-right: 10px;
 }
-/* 
+
 .page-container .navigation-links .navigation-links-inner .navigation-link.home-link .icon {
 	background-image: url("assets/icon-home.png");
 }
@@ -125,7 +125,7 @@ body {
 
 .page-container .navigation-links .navigation-links-inner .navigation-link.logout-link.active .icon {
 	background-image: url("assets/icon-logout-active.png");
-} */
+}
 
 .page-container .page-content {
 	position: absolute;

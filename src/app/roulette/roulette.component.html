@@ -1,0 +1,23 @@
+<div class="title-with-lines">
+    <div class="line"></div>
+    <div class="title bold">İşler</div>
+    <div class="line"></div>
+  </div>
+  <div class="job-list">
+    <div *ngFor="let taskItem of tasks" class="job-container">
+      <div class="job-item">{{taskItem.taskName}}</div>
+     
+    </div>
+  </div>
+
+  <div class="title-with-lines">
+      <div class="line"></div>
+      <div class="title bold">Ruleti Başlat</div>
+      <div class="line"></div>
+    </div>
+  <div class="roulette-container">
+      <div id="roulette"></div>
+      <div class="pointer"></div>
+    </div>
+    
+			<button class="start-roulette" (click)="startRoulette()">Başlat</button>

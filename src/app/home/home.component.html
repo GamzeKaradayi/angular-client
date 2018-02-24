@@ -26,15 +26,15 @@
     <div class="navigation-links-inner">
       <a class="navigation-link home-link active">
         <div class="icon"></div>
-        <div class="label">Ana Sayfa</div>
+        <div class="label" [routerLink]="['/home']" href="">Ana Sayfa</div>
       </a>
       <a class="navigation-link roulette-link">
         <div class="icon"></div>
-        <div class="label">İş Ruleti</div>
+        <div class="label" [routerLink]="['/roulette']" href="">İş Ruleti</div>
       </a>
       <a class="navigation-link logout-link">
         <div class="icon"></div>
-        <div class="label">Çıkış</div>
+        <div class="label" [routerLink]="['/login']" href="">Çıkış</div>
       </a>
     </div>
   </div>

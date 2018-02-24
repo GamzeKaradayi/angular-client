@@ -14,7 +14,8 @@
       <option *ngFor="let houseItem of houses">{{houseItem}}</option>
     </select>
     <div class="login-button-container">
-      <button class="login-button" type="submit" (click)="enterHouse()">GİRİŞ</button>
+      <button class="login-button" type="submit" (click)="enterHouse()"><a [routerLink]="['/home']" href="">GİRİŞ</a>
+      </button>
     </div>
   </form>
 </div>

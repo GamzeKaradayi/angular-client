@@ -45,6 +45,11 @@
     margin-top: 50px;
 }
 
+.login-button a {
+    color: white;
+    text-decoration: none;
+}
+
 .login-page .login-form .login-button-container .login-button {
     width: 150px;
     height: 40px;

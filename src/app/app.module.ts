@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RouletteComponent } from './roulette/roulette.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { ContainerComponent } from './container/container.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { RouletteComponent } from './roulette/roulette.component';
     LoginComponent,
     HomeComponent,
     PageNotFoundComponent,
-    RouletteComponent
+    RouletteComponent,
+    NavigationBarComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,

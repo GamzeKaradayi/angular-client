@@ -4,20 +4,28 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RouletteComponent } from './roulette/roulette.component';
+import { ContainerComponent } from './container/container.component';
 
-const appRoutes: Routes = [
-    { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'login', component: LoginComponent },
+let childrenRoutes = [
+
     { path: 'home', component: HomeComponent },
     { path: 'roulette', component: RouletteComponent },
+
+];
+const appRoutes: Routes = [
+
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: 'c', component: ContainerComponent, children: childrenRoutes },
+    { path: 'login', component: LoginComponent },
     { path: '**', component: PageNotFoundComponent }
-    
+
 ];
 
 export const routableComponents = [
     HomeComponent,
     LoginComponent,
     RouletteComponent,
+    ContainerComponent,
     PageNotFoundComponent
 ];
 

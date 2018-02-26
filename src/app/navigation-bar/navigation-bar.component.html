@@ -1,0 +1,38 @@
+  <!-- Header containing app logo and welcome text for mobile view -->
+  <div class="mobile-header">
+      <a class="title">
+        <div class="bold">öğrenci</div>
+        <div>evi</div>
+      </a>
+      <div class="welcome-text">
+        Hoşgeldiniz
+        <!-- <span class="bold">{{username}}</span>! -->
+      </div>
+    </div>  
+  <!-- Navigation links for both mobile and non-mobile (tablet and desktop) views -->
+  <div class="navigation-links">
+      <div class="title-and-welcome-text">
+        <a class="title">
+          <div class="bold">öğrenci</div>
+          <div>evi</div>
+        </a>
+        <div class="welcome-text">
+          Hoşgeldiniz
+          <!-- <span class="bold">{{username}}</span>! -->
+        </div>
+      </div>
+      <div class="navigation-links-inner">
+        <a class="navigation-link home-link active" [routerLink]="['/c/home']" href="">
+          <div class="icon"></div>
+          <div class="label" >Ana Sayfa</div>
+        </a>
+        <a class="navigation-link roulette-link" [routerLink]="['/c/roulette']" href="">
+          <div class="icon"></div>
+          <div class="label" >İş Ruleti</div>
+        </a>
+        <a class="navigation-link logout-link" [routerLink]="['/login']" href="">
+          <div class="icon"></div>
+          <div class="label" >Çıkış</div>
+        </a>
+      </div>
+    </div>

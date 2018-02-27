@@ -1,36 +1,35 @@
 <!-- Content of the page -->
-  <div class="page-content">
-    <div class="title-with-lines">
-      <div class="line"></div>
-      <div class="title bold">Ev Halkı</div>
-      <div class="line"></div>
-    </div>
-    <table class="people-table">
-      <thead>
-        <tr>
-          <th class="name-surname-column">Adı Soyadı</th>
-          <th class="task-count-column">Toplam Görev</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let person of houseHold">
-          <td class="name-surname-column">{{person.name}} {{person.surname}}</td>
-          <td class="task-count-column">{{person.taskCount}}</td>
-        </tr>
-      </tbody>
-    </table>
+<div class="page-content">
+  <div class="title-with-lines">
+    <div class="line"></div>
+    <div class="title bold">Ev Halkı</div>
+    <div class="line"></div>
+  </div>
+  <table class="people-table">
+    <thead>
+      <tr>
+        <th class="name-surname-column">Adı Soyadı</th>
+        <th class="task-count-column">Toplam Görev</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of houseHold">
+        <td class="name-surname-column">{{person.firstname}} {{person.lastname}}</td>
+        <td class="task-count-column">{{person.taskCount}}</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <div class="title-with-lines">
-      <div class="line"></div>
-      <div class="title bold">İşler</div>
-      <div class="line"></div>
+  <div class="title-with-lines">
+    <div class="line"></div>
+    <div class="title bold">İşler</div>
+    <div class="line"></div>
+  </div>
+  <div class="job-list">
+    <div *ngFor="let taskItem of tasks" class="job-container">
+      <div class="job-item">{{taskItem.description}}</div>
+      <div *ngIf="taskItem.userId" class="assignee">{{taskItem.userFirstname}}</div>
+      <div *ngIf="!taskItem.userId" class="assignee not-available">Kimse Atanmadı</div>
+      <div class="delete-button">sil</div>
     </div>
-    <div class="job-list">
-      <div *ngFor="let taskItem of tasks" class="job-container">
-        <div class="job-item">{{taskItem.taskName}}</div>
-        <div *ngIf="taskItem.taskOwner" class="assignee">{{taskItem.taskOwner.name + taskItem.taskOwner.surname}}</div>
-        <div *ngIf="!taskItem.taskOwner" class="assignee not-available">Kimse Atanmadı</div>
-        <div class="delete-button">sil</div>
-      </div>
-    </div>
- 
+  </div>

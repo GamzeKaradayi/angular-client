@@ -15,7 +15,7 @@ let childrenRoutes = [
 const appRoutes: Routes = [
 
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'c', component: ContainerComponent, children: childrenRoutes },
+    { path: 'dashboard', component: ContainerComponent, children: childrenRoutes },
     { path: 'login', component: LoginComponent },
     { path: '**', component: PageNotFoundComponent }
 

@@ -5,8 +5,8 @@
         <div>evi</div>
       </a>
       <div class="welcome-text">
-        Hoşgeldiniz
-        <!-- <span class="bold">{{username}}</span>! -->
+        Hoşgeldin 
+        <span class="bold"> {{currentUser?.firstname}} !</span>
       </div>
     </div>  
   <!-- Navigation links for both mobile and non-mobile (tablet and desktop) views -->
@@ -17,20 +17,20 @@
           <div>evi</div>
         </a>
         <div class="welcome-text">
-          Hoşgeldiniz
-          <!-- <span class="bold">{{username}}</span>! -->
+          Hoşgeldin
+          <span class="bold"> {{currentUser?.firstname}} !</span>
         </div>
       </div>
       <div class="navigation-links-inner">
-        <a class="navigation-link home-link active" [routerLink]="['/c/home']" href="">
+        <a class="navigation-link home-link" [routerLink]="['/dashboard/home']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
           <div class="icon"></div>
           <div class="label" >Ana Sayfa</div>
         </a>
-        <a class="navigation-link roulette-link" [routerLink]="['/c/roulette']" href="">
+        <a class="navigation-link roulette-link" [routerLink]="['/dashboard/roulette']" [routerLinkActive]="'active'">
           <div class="icon"></div>
           <div class="label" >İş Ruleti</div>
         </a>
-        <a class="navigation-link logout-link" [routerLink]="['/login']" href="">
+        <a class="navigation-link logout-link" [routerLink]="['/login']" [routerLinkActive]="'active'">
           <div class="icon"></div>
           <div class="label" >Çıkış</div>
         </a>

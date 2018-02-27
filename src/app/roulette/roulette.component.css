@@ -1,57 +1,92 @@
+.title-with-lines {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
- .title-with-lines {
-	display: flex;
-	align-items: center;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
 .title-with-lines .line {
-	height: 1px;
-	background-color: #ececec;
-	flex: 1;
+    height: 1px;
+    background-color: #ececec;
+    flex: 1;
 }
- .title-with-lines .title {
-	margin-left: 10px;
-	margin-right: 10px;
+
+.title-with-lines .title {
+    margin-left: 10px;
+    margin-right: 10px;
 }
- .job-list {
-	width: 100%;
+
+.job-list {
+    width: 100%;
 }
- .job-list .job-container {
-	display: flex;
-	margin-bottom: 10px;
+
+.job-list .job-container {
+    display: flex;
+    margin-bottom: 10px;
 }
- .job-list .job-container .job-item {
-	background-color: #ececec;
-	height: 40px;
-	display: flex;
-	align-items: center;
-	padding: 10px;
-	flex: 1;
-	cursor: pointer;
+
+.job-list .job-container .job-item {
+    background-color: #ececec;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    flex: 1;
+    cursor: pointer;
 }
- .job-list .job-container .job-item:hover {
-	opacity: 0.6;
+
+.job-list .job-container .job-item:hover {
+    opacity: 0.6;
 }
- .job-list .job-container.selected .job-item {
-	border: 2px solid black
+
+.job-list .job-container.selected .job-item {
+    border: 3px solid black
 }
- .roulette-container {
-	height:300px; overflow: hidden; position: relative; border:1px solid #ccc;
+
+.roulette-container {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ccc;
 }
+
 .roulette-container .pointer {
-	width:100%; height: 60px; position: absolute; top:120px; background: #ccc; opacity: .5;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 120px;
+    background: #ccc;
+    opacity: .5;
 }
+
 .roulette-container #roulette.active {
-	transition: all ease-in-out 6s;
+    transition: all ease-in-out 6s;
 }
+
 .roulette-container #roulette.reset {
-	transition: all ease-in-out .1s;
-} 
-:host ::ng-deep .roulette-container #roulette .user{
-	height: 60px;
-	display: flex;
-	justify-content: center;
+    transition: all ease-in-out .1s;
+}
+
+:host ::ng-deep .roulette-container #roulette .user {
+    height: 60px;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
-.start-roulette {width:100%; height:60px; border: none; background:#069; color:#fff; font-size:18px; font-weight: 700;}
+
+.start-roulette {
+    width: 100%;
+    height: 60px;
+    border: none;
+    background: #069;
+    color: #fff;
+    font-size: 18px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.start-roulette.roulette-disabled {
+	pointer-events: none;
+	opacity: 0.3;
+	cursor: not-allowed;
+}

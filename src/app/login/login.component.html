@@ -9,14 +9,13 @@
   <form ngForm class="login-form">
     <input [(ngModel)]="name" class="common-input" type="text" placeholder="Ad" name="nameInput">
     <input [(ngModel)]="surname" class="common-input" type="text" placeholder="Soyad" name="surnameInput">
-    <select class="common-input">
+
+    <select class="common-input" name="houseInput" [(ngModel)]="selectedHouseName">
       <option selected disabled>Ev Seçiniz</option>
-      <option *ngFor="let houseItem of houses">{{houseItem}}</option>
+      <option *ngFor="let houseItem of houses">{{houseItem.name}}</option>
     </select>
     <div class="login-button-container">
-      <button class="login-button" type="submit">
-        <a [routerLink]="['/c/home']" href="">GİRİŞ</a>
-      </button>
+      <button class="login-button" (click)="loginToHouse()" type="submit">GİRİŞ</button>
     </div>
   </form>
 </div>

@@ -8,11 +8,9 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  private isUserEnteredToHouse: boolean;
+  constructor() {  }
 
-  private userEnteredToHouse(isEntered: boolean) {
-    if (isEntered) {
-      this.isUserEnteredToHouse = true;
-    }
-  }
+  // ngOnInit() {
+  //   this.appService.getHouses();
+  // }
 }

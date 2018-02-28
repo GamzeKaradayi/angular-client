@@ -8,6 +8,7 @@
     <div *ngFor="let taskItem of tasks" class="job-container" (click)="taskItemSelected(taskItem)" [ngClass]="{'selected': selectedTaskItem && selectedTaskItem.id == taskItem.id}">
       <div class="job-item">{{taskItem.description}}</div>
     </div>
+    <div class="unassigned-tasks-empty" *ngIf="tasks.length==0"> Malesef tüm işler kapıldı</div>
   </div>
 
   <div class="title-with-lines">

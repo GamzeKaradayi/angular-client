@@ -13,7 +13,9 @@ export class RouletteComponent implements OnInit {
   iteration: number;
   selectedTaskItem: Task;
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService) {
+    this.tasks = [];
+  }
 
   ngOnInit() {
     if (!this.appService.isLoggedIn) {
@@ -39,7 +41,8 @@ export class RouletteComponent implements OnInit {
   private initializeTasks() {
     this.appService.getTasks().subscribe(
       respond => {
-        this.tasks = respond.json();
+        this.tasks = respond.json().filter(item => item.userId == null);
+
       },
       message => console.log("Error! " + "${msg.status} ${msg.statusText}")
     );
@@ -47,7 +50,6 @@ export class RouletteComponent implements OnInit {
   }
 
   private generateRoulette() {
-
     let self = this;
     for (var i = 0; i < this.iteration; i++) {
 
@@ -59,6 +61,7 @@ export class RouletteComponent implements OnInit {
   }
 
   private startRoulette() {
+
     let self = this;
 
     var Decisions = {
@@ -81,9 +84,12 @@ export class RouletteComponent implements OnInit {
       this.roulette.removeAttribute("style");
 
       self.appService.updateTask(this.selectedTaskItem, selectedUser.user.id).subscribe(
-        response => {
+        response => {         
           console.log(response.json());
           alert("İhale " + selectedUser.user.firstname + " " + selectedUser.user.lastname + " adlı kişiye kalmıştır.");
+        
+          this.selectedTaskItem.userId = selectedUser.user.id;
+          this.tasks = this.tasks.filter(item => item.userId == null);
         }
       )
     }, 6500);

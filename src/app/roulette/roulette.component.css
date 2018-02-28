@@ -90,3 +90,8 @@
 	opacity: 0.3;
 	cursor: not-allowed;
 }
+
+.unassigned-tasks-empty
+{
+    text-align: center;
+}

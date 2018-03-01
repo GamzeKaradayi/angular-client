@@ -5,6 +5,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: url("./../../assets/login-bg.png") bottom center no-repeat;
+    background-size: cover;
 }
 
 .login-page .title {
@@ -48,6 +50,11 @@
 .login-button a {
     color: white;
     text-decoration: none;
+}
+
+.login-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed !important;
 }
 
 .login-page .login-form .login-button-container .login-button {

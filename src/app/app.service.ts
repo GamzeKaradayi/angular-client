@@ -160,4 +160,22 @@ export class AppService {
             this.apiRequestOptions = options;
         }
     }
+
+    public deleteTask(targetTask: Task) {
+        if (this.apiRequestOptions && targetTask) {
+            let deleteTaskUrl = baseUrl + "tasks/" + targetTask.id;
+            return this.http.delete(deleteTaskUrl, this.apiRequestOptions);
+        }
+    }
+
+    public addTask(taskDescription) {
+        if (this.apiRequestOptions && taskDescription && this.loginUser && this.loginUser.houseId) {
+            let addTaskUrl = baseUrl + "tasks";
+            let requestBody = {
+                description: taskDescription,
+                houseId : this.loginUser.houseId
+            }
+            return this.http.post(addTaskUrl, requestBody, this.apiRequestOptions);
+        }
+    }
 }

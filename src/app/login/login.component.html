@@ -1,21 +1,21 @@
 <div class="login-page">
-  <div class="title">
-    <div class="bold">öğrenci</div>
-    <div>evi</div>
-  </div>
-  <div class="sub-title">
-    ev idaresi uygulaması
-  </div>
-  <form ngForm class="login-form">
-    <input [(ngModel)]="name" class="common-input" type="text" placeholder="Ad" name="nameInput">
-    <input [(ngModel)]="surname" class="common-input" type="text" placeholder="Soyad" name="surnameInput">
-
-    <select class="common-input" name="houseInput" [(ngModel)]="selectedHouseName">
-      <option selected disabled>Ev Seçiniz</option>
-      <option *ngFor="let houseItem of houses">{{houseItem.name}}</option>
-    </select>
-    <div class="login-button-container">
-      <button class="login-button" (click)="loginToHouse()" type="submit">GİRİŞ</button>
+    <div class="title">
+        <div class="bold">öğrenci</div>
+        <div>evi</div>
     </div>
-  </form>
+    <div class="sub-title">
+        ev idaresi uygulaması
+    </div>
+    <form #f="ngForm" class="login-form" (ngSubmit)="loginToHouse()" novalidate>
+        <input [(ngModel)]="name" class="common-input" type="text" placeholder="Ad" name="nameInput" required>
+        <input [(ngModel)]="surname" class="common-input" type="text" placeholder="Soyad" name="surnameInput" required>
+
+        <select class="common-input" name="houseInput" [(ngModel)]="selectedHouseName" required>
+          <option selected disabled value ="" >Ev Seçiniz</option>
+          <option *ngFor="let houseItem of houses">{{houseItem.name}}</option>
+        </select>
+        <div class="login-button-container">
+            <button class="login-button" (click)="loginToHouse()" type="submit" [disabled]="!f.valid">GİRİŞ</button>
+        </div>
+    </form>
 </div>

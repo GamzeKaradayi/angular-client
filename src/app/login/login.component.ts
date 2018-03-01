@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AppService, House } from '../app.service';
 import { Router } from '@angular/router';
 import 'rxjs/RX';
-
+import {NgForm} from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   private name: string;
   private surname: string;
   private houses: House[] = [];
-  private selectedHouseName: string = 'Ev Seçiniz';
+  private selectedHouseName: string = '';
 
   constructor(private appService: AppService, private router: Router) { }
 
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         console.log("Evler:");
         console.log(this.houses);
       },
-      message => console.log("Error! " + "${msg.status} ${msg.statusText}")
+      message => console.log("Error! " + message.status + " " + message.statusText)
     );
   }
 

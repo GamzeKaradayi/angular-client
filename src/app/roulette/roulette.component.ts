@@ -34,7 +34,7 @@ export class RouletteComponent implements OnInit {
         this.houseHold = respond.json();
         this.generateRoulette();
       },
-      message => console.log("Error! " + "${msg.status} ${msg.statusText}")
+      message => console.log("Error! " + message.status + " " + message.statusText)
     );
   }
 
@@ -44,7 +44,7 @@ export class RouletteComponent implements OnInit {
         this.tasks = respond.json().filter(item => item.userId == null);
 
       },
-      message => console.log("Error! " + "${msg.status} ${msg.statusText}")
+      message => console.log("Error! " + message.status + " " + message.statusText)
     );
 
   }

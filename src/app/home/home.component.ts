@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService, Person, Task } from '../app.service';
-
+import * as _ from 'lodash';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
   private currentUser: Person;
   private isUserDataReady: boolean = false;
   private isTaskDataReady: boolean = false;
-
+  private newTaskDescription: string = '';
+  private disableNewTaskButton = true;
   constructor(private appService: AppService) { }
 
   ngOnInit() {
@@ -36,7 +37,7 @@ export class HomeComponent implements OnInit {
         console.log(this.houseHold);
         this.checkIfHomePageDataReady();
       },
-      message => console.log("Error! " + "${msg.status} ${msg.statusText}")
+      message => console.log("Error! " + message.status + " " + message.statusText)
     );
   }
 
@@ -49,7 +50,7 @@ export class HomeComponent implements OnInit {
         console.log(this.tasks);
         this.checkIfHomePageDataReady();
       },
-      message => console.log("Error! " + "${msg.status} ${msg.statusText}")
+      message => console.log("Error! " + message.status + " " + message.statusText)
     );
   }
 
@@ -108,6 +109,36 @@ export class HomeComponent implements OnInit {
       this.houseHold.forEach(user => {
         user.taskCount = this.getTaskCountOfUser(user.id);
       });
+    }
+  }
+
+  private deleteTask(taskItem){
+    this.appService.deleteTask(taskItem).subscribe(
+      respond => {
+        console.log("Task deleted: " + respond);
+        this.initializeTasks();
+      },
+      message => console.log("Error! " + message.status + " " + message.statusText)
+    );
+  }
+
+  private addNewTask() {
+    if (_.trim(this.newTaskDescription) !== '') {
+       this.appService.addTask(this.newTaskDescription).subscribe(
+      respond => {
+        console.log("Task added: " + respond);
+        this.initializeTasks();
+      },
+      message => console.log("Error! " + message.status + " " + message.statusText)
+    );
+    }
+  }
+
+  private newTaskNameChanged() {
+    if (_.trim(this.newTaskDescription) === '') {
+      this.disableNewTaskButton = true;
+    }else{
+      this.disableNewTaskButton = false;
     }
   }
 }
